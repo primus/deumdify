@@ -24,7 +24,7 @@ var browserify = require('browserify')
   , fs = require('fs');
 
 var b = browserify({ entries: [ 'main.js' ], standalone: 'Foo' });
-b.plugin(deamdify);
+b.plugin(deumdify);
 
 b.bundle().pipe(fs.createWriteStream('bundle.js'));
 ```
