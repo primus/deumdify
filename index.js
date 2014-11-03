@@ -69,6 +69,11 @@ function createStream() {
  * @api public
  */
 function deumdify(browserify) {
+  //
+  // Bail out if there is no UMD wrapper.
+  //
+  if (!browserify._options.standalone) return;
+
   browserify.pipeline.push(createStream());
   browserify.on('reset', function reset() {
     browserify.pipeline.push(createStream());
