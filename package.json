@@ -31,6 +31,7 @@
     "first-chunk-stream": "1.0.x"
   },
   "devDependencies": {
+    "browserify": "6.2.x",
     "concat-stream": "1.4.x",
     "istanbul": "0.3.x",
     "jsdom": "1.1.x",
