@@ -1,5 +1,9 @@
 # deUMDify
 
+[![Build Status](https://travis-ci.org/primus/deumdify.svg?branch=master)](https://travis-ci.org/primus/deumdify)
+[![NPM version](https://badge.fury.io/js/deumdify.svg)](http://badge.fury.io/js/deumdify)
+[![Coverage Status](https://img.shields.io/coveralls/primus/deumdify.svg)](https://coveralls.io/r/primus/deumdify?branch=master)
+
 This module is a [Browserify](http://browserify.org/) plugin that will expose a
 standalone bundle as a property of the global object omitting AMD and CommonJS
 support.
