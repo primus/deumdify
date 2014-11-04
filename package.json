@@ -7,7 +7,9 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- --reporter spec",
+    "test": "mocha --reporter spec",
+    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,13 @@
     "esprima": "1.2.x",
     "estraverse": "1.7.x",
     "first-chunk-stream": "1.0.x"
+  },
+  "devDependencies": {
+    "browserify": "6.2.x",
+    "concat-stream": "1.4.x",
+    "istanbul": "0.3.x",
+    "jsdom": "1.1.x",
+    "mocha": "2.0.x",
+    "pre-commit": "0.0.x"
   }
 }
