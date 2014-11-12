@@ -5,6 +5,11 @@ var firstChunk = require('first-chunk-stream')
   , escodegen = require('escodegen')
   , esprima = require('esprima');
 
+//
+// Expose the plugin.
+//
+module.exports = deumdify;
+
 /**
  * Prune unwanted branches from the given source code.
  *
@@ -79,8 +84,3 @@ function deumdify(browserify) {
     browserify.pipeline.push(createStream());
   });
 }
-
-//
-// Expose the function.
-//
-module.exports = deumdify;
