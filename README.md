@@ -5,7 +5,7 @@
 This module is a [Browserify](http://browserify.org/) plugin that will expose a
 standalone bundle as a property of the global object omitting AMD and CommonJS
 support. The reason for this plugin is that Browserify does not give the ability
-to generate a standalone bundle without an UMD wrapper.
+to generate a standalone bundle without a UMD wrapper.
 
 ## Install
 
