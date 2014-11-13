@@ -31,10 +31,10 @@
     "first-chunk-stream": "1.0.x"
   },
   "devDependencies": {
-    "browserify": "6.2.x",
+    "browserify": "6.3.x",
     "concat-stream": "1.4.x",
     "istanbul": "0.3.x",
-    "jsdom": "1.1.x",
+    "jsdom": "1.2.x",
     "mocha": "2.0.x",
     "pre-commit": "0.0.x"
   },
