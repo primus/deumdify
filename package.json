@@ -2,19 +2,6 @@
   "name": "deumdify",
   "version": "1.0.0",
   "description": "Browserify plugin to expose a standalone bundle as a property of the global object",
-  "files": [
-    "index.js"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "coverage": "istanbul cover node_modules/.bin/_mocha -- --reporter spec",
-    "test": "mocha --reporter spec",
-    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/primus/deumdify.git"
-  },
   "keywords": [
     "browserify-plugin",
     "browserify",
@@ -22,8 +9,23 @@
     "plugin",
     "umd"
   ],
-  "author": "Luigi Pinca",
+  "homepage": "https://github.com/primus/deumdify",
+  "bugs": "https://github.com/primus/deumdify/issues",
   "license": "MIT",
+  "author": "Luigi Pinca",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/primus/deumdify.git"
+  },
+  "scripts": {
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- --reporter spec",
+    "test": "mocha --reporter spec",
+    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec"
+  },
   "dependencies": {
     "escodegen": "1.4.x",
     "esprima": "1.2.x",
