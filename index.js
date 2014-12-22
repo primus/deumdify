@@ -1,8 +1,8 @@
 'use strict';
 
-var firstChunk = require('first-chunk-stream')
-  , estraverse = require('estraverse')
+var estraverse = require('estraverse')
   , escodegen = require('escodegen')
+  , through = require('through2')
   , esprima = require('esprima');
 
 //
@@ -50,7 +50,13 @@ function prune(code) {
  * @api private
  */
 function createStream() {
-  var stream = firstChunk(function transform(chunk, encoding, next) {
+  var firstChunk = true;
+
+  var stream = through(function transform(chunk, encoding, next) {
+    if (!firstChunk) return next(null, chunk);
+
+    firstChunk = false;
+
     var regex = /^(.+?)(\(function\(\)\{)/
       , pattern;
 

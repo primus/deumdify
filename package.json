@@ -30,7 +30,7 @@
     "escodegen": "1.4.x",
     "esprima": "1.2.x",
     "estraverse": "1.8.x",
-    "first-chunk-stream": "1.0.x"
+    "through2": "0.6.x"
   },
   "devDependencies": {
     "browserify": "7.0.x",
