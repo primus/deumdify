@@ -10,9 +10,7 @@ describe('deumdify', function () {
     , fs = require('fs')
     , b;
 
-  var html = fs.readFileSync(path.join(__dirname, 'fixture/index.html'), {
-    encoding: 'utf8'
-  });
+  var html = fs.readFileSync(path.join(__dirname, 'fixture/index.html'), 'utf8');
 
   var options = {
     entries: [ path.resolve(__dirname, 'input/main.js') ],
@@ -61,9 +59,11 @@ describe('deumdify', function () {
   });
 
   it('removes AMD support', function (done) {
-    var ws = fs.createWriteStream(path.join(__dirname, 'fixture/bundle.js'));
+    var ws = fs.createWriteStream(path.join(__dirname, 'fixture/bundle.js'))
+      , bundle = b.bundle();
 
-    ws.on('finish', function () {
+    bundle.on('data', ws.write.bind(ws));
+    bundle.on('end', function () {
       var window = jsdom.jsdom(html).parentWindow;
 
       window.onModuleLoaded = function () {
@@ -78,8 +78,6 @@ describe('deumdify', function () {
         done();
       };
     });
-
-    b.bundle().pipe(ws);
   });
 
   it('removes CommonJS support', function () {
