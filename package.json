@@ -1,6 +1,6 @@
 {
   "name": "deumdify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Browserify plugin to expose a standalone bundle as a property of the global object",
   "keywords": [
     "browserify-plugin",
