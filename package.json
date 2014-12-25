@@ -33,14 +33,14 @@
     "through2": "0.6.x"
   },
   "devDependencies": {
-    "browserify": "7.0.x",
+    "browserify": "8.0.x",
     "concat-stream": "1.4.x",
     "istanbul": "0.3.x",
     "jsdom": "1.5.x",
-    "mocha": "2.0.x",
+    "mocha": "2.1.x",
     "pre-commit": "0.0.x"
   },
   "peerDependencies": {
-    "browserify": "5.1.0 - 7"
+    "browserify": "5.1.0 - 8"
   }
 }
