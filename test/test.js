@@ -10,7 +10,8 @@ describe('deumdify', function () {
     , fs = require('fs')
     , b;
 
-  var html = fs.readFileSync(path.join(__dirname, 'fixture/index.html'), 'utf8');
+  var file = path.join(__dirname, 'fixture/index.html')
+    , html = fs.readFileSync(file, 'utf8');
 
   var options = {
     entries: [ path.resolve(__dirname, 'input/main.js') ],
@@ -64,7 +65,7 @@ describe('deumdify', function () {
 
     bundle.on('data', ws.write.bind(ws));
     bundle.on('end', function () {
-      var window = jsdom.jsdom(html).parentWindow;
+      var window = jsdom.jsdom(html, { url: 'file://'+ file }).parentWindow;
 
       window.onModuleLoaded = function () {
         try {
