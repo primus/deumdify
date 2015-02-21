@@ -21,15 +21,26 @@ function prune(code) {
   var ast = esprima.parse(code);
 
   estraverse.replace(ast, {
-    enter: function enter(node) {
-      if ('BlockStatement' === node.type) {
-        return node.body[0].alternate.alternate;
+    leave: function leave(node, parent) {
+      var ret;
+
+      if ('IfStatement' === node.type) {
+        if ('BinaryExpression' !== node.test.type) return;
+
+        if ('self' === node.test.left.argument.name) {
+          node.alternate = null;
+        } else if ('global' === node.test.left.argument.name) {
+          ret = node.alternate;
+        }
+
+        return ret;
       }
+
       if (
-          'ConditionalExpression' === node.type
-        && 'global' === node.consequent.right.name
+          'BlockStatement' === node.type
+        && 'FunctionExpression' === parent.type
       ) {
-        return node.alternate;
+        return node.body[0].alternate.alternate;
       }
     }
   });
