@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "escodegen": "1.6.x",
-    "esprima": "2.0.x",
-    "estraverse": "1.9.x",
+    "esprima": "2.2.x",
+    "estraverse": "4.0.x",
     "through2": "0.6.x"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "concat-stream": "1.4.x",
     "istanbul": "0.3.x",
     "jsdom": "3.1.x",
-    "mocha": "2.1.x",
+    "mocha": "2.2.x",
     "pre-commit": "1.0.x"
   },
   "peerDependencies": {
