@@ -42,4 +42,4 @@ And that's it.
 
 ## License
 
-MIT
+[MIT](LICENSE)
