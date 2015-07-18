@@ -28,12 +28,12 @@
   },
   "dependencies": {
     "escodegen": "1.6.x",
-    "esprima": "2.3.x",
+    "esprima": "2.4.x",
     "estraverse": "4.1.x",
     "through2": "2.0.x"
   },
   "devDependencies": {
-    "browserify": "10.2.x",
+    "browserify": "11.0.x",
     "concat-stream": "1.5.x",
     "istanbul": "0.3.x",
     "jsdom": "3.1.x",
@@ -41,6 +41,6 @@
     "pre-commit": "1.0.x"
   },
   "peerDependencies": {
-    "browserify": "9 - 10"
+    "browserify": "9 - 11"
   }
 }
