@@ -65,7 +65,7 @@ describe('deumdify', function () {
 
     bundle.on('data', ws.write.bind(ws));
     bundle.on('end', function () {
-      var window = jsdom.jsdom(html, { url: 'file://'+ file }).parentWindow;
+      var window = jsdom.jsdom(html, { url: 'file://'+ file }).defaultView;
 
       window.onModuleLoaded = function () {
         try {
