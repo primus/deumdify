@@ -22,23 +22,23 @@
     "url": "https://github.com/primus/deumdify.git"
   },
   "scripts": {
-    "coverage": "istanbul cover node_modules/.bin/_mocha",
+    "coverage": "istanbul cover _mocha",
     "test": "mocha",
-    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly"
+    "test-travis": "istanbul cover _mocha --report lcovonly"
   },
   "dependencies": {
-    "escodegen": "1.6.x",
-    "esprima": "2.4.x",
+    "escodegen": "1.7.x",
+    "esprima": "2.6.x",
     "estraverse": "4.1.x",
     "through2": "2.0.x"
   },
   "devDependencies": {
-    "browserify": "11.0.x",
+    "browserify": "11.2.x",
     "concat-stream": "1.5.x",
     "istanbul": "0.3.x",
-    "jsdom": "3.1.x",
-    "mocha": "2.2.x",
-    "pre-commit": "1.0.x"
+    "jsdom": "6.5.x",
+    "mocha": "2.3.x",
+    "pre-commit": "1.1.x"
   },
   "peerDependencies": {
     "browserify": "9 - 11"
