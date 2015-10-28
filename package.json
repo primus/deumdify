@@ -41,6 +41,6 @@
     "pre-commit": "1.1.x"
   },
   "peerDependencies": {
-    "browserify": "9 - 11"
+    "browserify": "9 - 12"
   }
 }
