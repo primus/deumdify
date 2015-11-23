@@ -87,7 +87,7 @@ function createStream() {
 /**
  * Prune the UMD pattern from a Browserify bundle stream.
  *
- * @param {Browserify} Browserify instance
+ * @param {Browserify} browserify Browserify instance
  * @api public
  */
 function deumdify(browserify) {
