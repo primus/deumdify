@@ -27,16 +27,16 @@
     "test-travis": "istanbul cover _mocha --report lcovonly"
   },
   "dependencies": {
-    "escodegen": "1.7.x",
+    "escodegen": "1.8.x",
     "esprima": "2.7.x",
     "estraverse": "4.1.x",
     "through2": "2.0.x"
   },
   "devDependencies": {
-    "browserify": "12.0.x",
+    "browserify": "13.0.x",
     "concat-stream": "1.5.x",
     "istanbul": "0.4.x",
-    "jsdom": "7.0.x",
+    "jsdom": "7.2.x",
     "mocha": "2.3.x",
     "pre-commit": "1.1.x"
   },
