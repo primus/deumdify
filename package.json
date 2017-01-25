@@ -33,7 +33,7 @@
     "through2": "~2.0.1"
   },
   "devDependencies": {
-    "browserify": "~13.1.1",
+    "browserify": "~14.0.0",
     "concat-stream": "~1.6.0",
     "istanbul": "~0.4.5",
     "jsdom": "~9.9.0",
@@ -41,6 +41,6 @@
     "pre-commit": "~1.2.0"
   },
   "peerDependencies": {
-    "browserify": "9 - 13"
+    "browserify": "9 - 14"
   }
 }
