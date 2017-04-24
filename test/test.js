@@ -8,10 +8,8 @@ describe('deumdify', function () {
     , deumdify = require('..')
     , path = require('path')
     , fs = require('fs')
+    , vm = require('vm')
     , b;
-
-  var file = path.join(__dirname, 'fixture/index.html')
-    , html = fs.readFileSync(file, 'utf8');
 
   var options = {
     entries: [ path.resolve(__dirname, 'input/main.js') ],
@@ -46,39 +44,37 @@ describe('deumdify', function () {
 
   it('works', function (done) {
     b.bundle().pipe(concat({ encoding: 'string' }, function (output) {
-      jsdom.env({
-        html: html.replace(/<script[\s\S]+\/script>/, ''),
-        src: [ output, 'window.foo();' ],
-        done: function (err, window) {
-          assert.ifError(err);
-          assert.strictEqual(typeof window.foo, 'function');
-          assert.strictEqual(window.bar, 'baz qux; typeof process is: undefined');
-          done();
-        }
-      });
+      var dom =  new jsdom.JSDOM('', { runScripts: 'outside-only' });
+
+      dom.runVMScript(new vm.Script(output));
+      dom.runVMScript(new vm.Script('window.foo();'));
+
+      assert.strictEqual(typeof dom.window.foo, 'function');
+      assert.strictEqual(dom.window.bar, 'baz qux; typeof process is: undefined');
+      done();
     }));
   });
 
   it('removes AMD support', function (done) {
     var ws = fs.createWriteStream(path.join(__dirname, 'fixture/bundle.js'))
-      , bundle = b.bundle();
+      , file = path.join(__dirname, 'fixture/index.html');
 
-    bundle.on('data', ws.write.bind(ws));
-    bundle.on('end', function () {
-      var window = jsdom.jsdom(html, { url: 'file://'+ file }).defaultView;
+    ws.on('finish', function () {
+      var dom = new jsdom.JSDOM(fs.readFileSync(file, 'utf8'), {
+        runScripts: 'dangerously',
+        url: 'file://'+ file,
+        resources: 'usable'
+      });
 
-      window.onModuleLoaded = function () {
-        try {
-          assert.strictEqual(typeof window.foo, 'function');
-          window.foo();
-          assert.strictEqual(window.bar, 'baz qux; typeof process is: undefined');
-        } catch (e) {
-          return done(e);
-        }
-
+      dom.window.onModulesLoaded = function () {
+        assert.strictEqual(typeof dom.window.foo, 'function');
+        dom.window.foo();
+        assert.strictEqual(dom.window.bar, 'baz qux; typeof process is: undefined');
         done();
       };
     });
+
+    b.bundle().pipe(ws);
   });
 
   it('removes CommonJS support', function () {
