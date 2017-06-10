@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "escodegen": "~1.8.1",
-    "esprima": "~3.1.2",
+    "esprima": "~4.0.0",
     "estraverse": "~4.2.0",
     "through2": "~2.0.1"
   },
