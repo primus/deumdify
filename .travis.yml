@@ -4,7 +4,7 @@ node_js: stable
 script:
   - "npm run test-travis"
 after_script:
-  - "npm install coveralls@2 && cat coverage/lcov.info | coveralls"
+  - "npm install coveralls@3 && cat coverage/lcov.info | coveralls"
 notifications:
   irc:
     channels:

@@ -76,7 +76,7 @@ function createStream() {
       return p2;
     });
 
-    this.push(new Buffer(prune(pattern) + chunk));
+    this.push(prune(pattern) + chunk);
     next();
   });
 
