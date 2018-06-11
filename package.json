@@ -27,7 +27,7 @@
     "test-travis": "istanbul cover _mocha --report lcovonly"
   },
   "dependencies": {
-    "escodegen": "~1.9.0",
+    "escodegen": "~1.10.0",
     "esprima": "~4.0.0",
     "estraverse": "~4.2.0",
     "through2": "~2.0.1"
