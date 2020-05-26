@@ -45,9 +45,10 @@ describe('deumdify', function () {
   it('works', function (done) {
     b.bundle().pipe(concat({ encoding: 'string' }, function (output) {
       var dom =  new jsdom.JSDOM('', { runScripts: 'outside-only' });
+      var context = dom.getInternalVMContext();
 
-      dom.runVMScript(new vm.Script(output));
-      dom.runVMScript(new vm.Script('window.foo();'));
+      new vm.Script(output).runInContext(context);
+      new vm.Script('window.foo();').runInContext(context);
 
       assert.strictEqual(typeof dom.window.foo, 'function');
       assert.strictEqual(dom.window.bar, 'baz qux; typeof process is: undefined');
