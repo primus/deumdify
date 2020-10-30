@@ -1,7 +1,7 @@
 language: node_js
 node_js: stable
 after_success:
-  - nyc report --reporter=text-lcov | coveralls
+  - c8 report --reporter=text-lcov | coveralls
 notifications:
   irc:
     channels:
