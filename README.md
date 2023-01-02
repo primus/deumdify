@@ -1,6 +1,6 @@
 # deUMDify
 
-[![Version npm](http://img.shields.io/npm/v/deumdify.svg?style=flat-square)](https://www.npmjs.com/package/deumdify)[![Build Status](https://img.shields.io/github/workflow/status/primus/deumdify/CI/master?label=CI&style=flat-square)](https://github.com/primus/deumdify/actions?query=workflow%3ACI+branch%3Amaster)[![Dependencies](https://img.shields.io/david/primus/deumdify.svg?style=flat-square)](https://david-dm.org/primus/deumdify)[![Coverage Status](http://img.shields.io/coveralls/primus/deumdify/master.svg?style=flat-square)](https://coveralls.io/r/primus/deumdify?branch=master)[![IRC channel](http://img.shields.io/badge/IRC-irc.freenode.net%23primus-00a8ff.svg?style=flat-square)](http://webchat.freenode.net/?channels=primus)
+[![Version npm](http://img.shields.io/npm/v/deumdify.svg?style=flat-square)](https://www.npmjs.com/package/deumdify)[![Build Status](https://img.shields.io/github/workflow/status/primus/deumdify/CI/master?label=CI&style=flat-square)](https://github.com/primus/deumdify/actions?query=workflow%3ACI+branch%3Amaster)[![Coverage Status](http://img.shields.io/coveralls/primus/deumdify/master.svg?style=flat-square)](https://coveralls.io/r/primus/deumdify?branch=master)
 
 This module is a [Browserify](http://browserify.org/) plugin that will expose a
 standalone bundle as a property of the global object omitting AMD and CommonJS
